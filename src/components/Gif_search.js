@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import '../styles/App.css';
+
 
 class GifSearch extends Component {
+    // eslint-disable-next-line react/no-typos
+
     constructor() {
         super();
         this.state = { query: '' }
@@ -10,13 +14,18 @@ class GifSearch extends Component {
         this.props.onQueryUpdate({query});
     }
 
+
+
+
+
     render() {
         return (
             <div className="search">
-                <input onChange={event => this.onInputChange(event.target.value)} />
+                <input id="input" onChange={event => this.onInputChange(event.target.value)} />
             </div>
         );
     }
 }
 
 export default GifSearch;
+
