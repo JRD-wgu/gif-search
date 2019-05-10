@@ -33,14 +33,14 @@ class App extends Component {
 		if (queryString === null) {
 			let url = `https://api.giphy.com/v1/gifs/random?api_key=L80T6AbTm5TWhPsG1N2k9CVWup8R8JJv&tag=random&rating=R`;
 			request.get(url, (err, res) => {
-				//this.setState({gifs: res.body.data});
+				this.setState({gifs: res.body.data});
 				console.log(query)
 			})
 		} else {
 			request.get(url, (err, res) => {
 				console.log(res.body.data);
 
-				//this.setState({gifs: res.body.data});
+				this.setState({gifs: res.body.data});
 			})
 		}
 	}
