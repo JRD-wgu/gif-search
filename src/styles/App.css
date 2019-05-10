@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, #d16ba5, #c57abd, #b68acf, #a598dc, #95a5e4, #7ab2f3, #54c0fd, #00cdff, #00dffc, #00edd7, #00f693, #2df924);
+}
+
+#App {
+    margin: auto;
+    width: 100%;
+
+
+}
+
+#header {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.0em;
+    color: white;
+}
+
+.search {
+    margin: auto;
+    display: block;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+#input {
+    margin: auto;
+    display: inline-block;
+    width: 50%;
+    font-size: 18px;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    align-content: space-around;
+}
+
+.grid-item {
+    display: inline-grid;
+    width: 100%;
+
+
+
+}
+
+#gif {
+    width: 100%;
+
+}
+
+ul {
+    padding-inline-start: 0px;
+
+}
