@@ -19,9 +19,12 @@ class GifSearch extends Component {
 
 
     render() {
+        // const blankQuery = () => {}
+            // this.setState{query:  ""};
+
         return (
             <div className="search">
-                <input id="input" onChange={event => this.onInputChange(event.target.value)} />
+                <input id="input"  onChange={event => this.onInputChange(event.target.value)} />
             </div>
         );
     }
