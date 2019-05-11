@@ -19,27 +19,28 @@ class App extends Component {
 		this.handleQueryUpdate = this.handleQueryUpdate.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	request.get("https://api.giphy.com/v1/gifs/random?api_key=L80T6AbTm5TWhPsG1N2k9CVWup8R8JJv", (err, res) => {
-	// 		this.setState({gifs: res.body.data})})
-	// }
+	componentDidMount() {
+		const randomGifs = [];
+		for (let i = 0; i < 3; i++) {
+			request.get("https://api.giphy.com/v1/gifs/random?api_key=L80T6AbTm5TWhPsG1N2k9CVWup8R8JJv", (err, res) => {
+				randomGifs.push(res.body.data);
+				this.setState({gifs: randomGifs})
+			})
+			}
+
+	}
 
 	handleQueryUpdate(query) {
 		console.log(query);
 		let queryString = Object.values(query).toString();
 		queryString = queryString.replace(/\s/g, '+');
-		const url = `https://api.giphy.com/v1/gifs/search?api_key=L80T6AbTm5TWhPsG1N2k9CVWup8R8JJv&q=${queryString}&limit=9`;
+		let url = `https://api.giphy.com/v1/gifs/search?api_key=L80T6AbTm5TWhPsG1N2k9CVWup8R8JJv&q=${queryString}&limit=9`;
 
-		if (queryString === null) {
-			let url = `https://api.giphy.com/v1/gifs/random?api_key=L80T6AbTm5TWhPsG1N2k9CVWup8R8JJv&tag=random&rating=R`;
-			request.get(url, (err, res) => {
-				this.setState({gifs: res.body.data});
-				console.log(query)
-			})
+		if (queryString === "") {
+			this.componentDidMount();
 		} else {
 			request.get(url, (err, res) => {
 				console.log(res.body.data);
-
 				this.setState({gifs: res.body.data});
 			})
 		}
@@ -59,13 +60,12 @@ class App extends Component {
 		return (
 			<div>
 				<div id={"header"}>
-					<h1> Giphy Grabber</h1>
+					<h1 id={"title"}> Giphy Grabber</h1>
+				</div>
+					<div>
 					<GifSearch onQueryUpdate={query => this.handleQueryUpdate(query)}/>
 				</div>
-				<div>
-
 					<GifList gifs={this.state.gifs}/>
-				</div>
 			</div>
 		);
 		}

@@ -18,6 +18,13 @@ body{
     font-family: 'Roboto Slab', serif;
     font-size: 2.0em;
     color: white;
+    transition: all .25s linear;
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.35), 3px 3px 9px rgba(0,0,0,0.35), 4px 4px 9px rgba(0,0,0,0.35), 4px 4px 9px rgba(0,0,0,0.35);
+}
+
+#header :hover {
+    transform: scale(1.025) translateX(1.5%) translateY(-4.5%);
+    text-shadow: 6px 6px 9px rgba(0,0,0,0.35), 8px 8px 9px rgba(0,0,0,0.35), 10px 4px 9px rgba(0,0,0,0.35), 10px 4px 9px rgba(0,0,0,0.35);
 }
 
 .search {
@@ -34,9 +41,17 @@ body{
     font-size: 18px;
 }
 
+.container_body {
+    width: 100%;
+}
+
 .grid-container {
+    margin: 2.5%;
+    padding-bottom: 5%;
+    justify-items: center;
+    align-items: center;
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 3%;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
     align-content: space-around;
@@ -45,13 +60,28 @@ body{
 .grid-item {
     display: inline-grid;
     width: 100%;
+    transition: all .25s linear;
+    -webkit-box-shadow: inset 5px 5px 19px 0px #000000, 6px 6px 19px 9px #000000;
+    box-shadow: inset 5px 5px 19px 0px #000000, 6px 6px 19px 9px #000000;
+}
 
-
-
+.grid-item :hover {
+    transform: scale(1.025) translateY(-5%);
+    -webkit-box-shadow: inset 5px 5px 19px 0px #000000, 6px 6px 19px 9px #000000;
+    box-shadow: inset 5px 5px 19px 0px #000000, 6px 6px 19px 9px #000000;
 }
 
 #gif {
     width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    transition: all .4s linear;
+
+}
+
+#gif :hover {
+    transform: scale(1.1);
+    opacity: 0.6;
 
 }
 

@@ -10,7 +10,9 @@ const GifList = (props) => {
     });
 
     return (
-        <ul className="grid-container"> {gifItems} </ul>
+        <div className={"container-body"}>
+          <ul className="grid-container"> {gifItems} </ul>
+        </div>
     );
 };
 
