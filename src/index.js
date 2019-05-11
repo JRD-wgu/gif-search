@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import GifSearch from './components/Gif_search';
 import GifList from './components/GifList';
-import './styles/App.css';
 //import 'axios';
 import request from 'superagent';
 
