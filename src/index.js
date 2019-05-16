@@ -38,6 +38,7 @@ class App extends Component {
 		if (queryString === "") {
 			this.componentDidMount();
 		} else {
+			request.abort();
 			request.get(url, (err, res) => {
 				console.log(res.body.data);
 				this.setState({gifs: res.body.data});
